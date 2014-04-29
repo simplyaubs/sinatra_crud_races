@@ -1,0 +1,11 @@
+<h1><%= single_race[:race_name] %></h1>
+
+<form action="/races/<%= single_race[:id] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="race_name" value="<%= single_race[:race_name] %>">
+  <input type="text" name="race_location" value="<%= single_race[:race_location] %>">
+  <input type="text" name="race_month" value="<%= single_race[:race_month] %>">
+  <input type="submit" value="Update Race">
+</form>
+
+<a href="/">Back to list of Races</a>

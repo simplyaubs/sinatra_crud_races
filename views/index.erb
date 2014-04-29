@@ -4,6 +4,6 @@
 
 <ul>
   <% list_of_races.each do |race| %>
-  <li><a href="/races/<%= race[:id] %>"><%= race[:race_name] %> | <%= race[:race_location] %> | <%= race[:race_month] %></a></li>
+  <li><a href="/races/<%= race[:id] %>"><%= race[:race_name] %></a></li>
     <% end %>
 </ul>

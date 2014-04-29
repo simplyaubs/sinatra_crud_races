@@ -23,4 +23,15 @@ class Application < Sinatra::Application
     DB[:races].insert(race_name: params[:race_name], race_location: params[:race_location], race_month: params[:race_month])
     redirect '/'
   end
+
+  get '/races/:id' do
+    race_id = params[:id]
+    erb :show, locals: {single_race: DB[:races][id: race_id]}
+  end
+
+  put '/races/:id' do
+    race_id = params[:id]
+    DB[:races].where(id: race_id).update(race_name: params[:race_name], race_location: params[:race_location], race_month: params[:race_month])
+    redirect "/races/#{race_id}"
+  end
 end
